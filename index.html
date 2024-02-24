@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #rectangle {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: width 0.3s, height 0.3s;
+    }
+
+ 
+    button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+
+    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click the Button</title>
+</head>
+<body>
+<h1 id="h">Click the Button</h1>
+
+<div id="rectangle"></div>
+
+<label for="points">Size (between 0 and 10):</label>
+<input type="range" id="points" name="points" min="0" max="10">
+<button id="blueButton">Click Me!</button>
+
+<script>
+  const range = document.getElementById('points');
+const recta = document.getElementById('rectangle');
+
+range.addEventListener('input', function() {
+  
+    document.getElementById('h').textContent = range.value;
+    recta.style.width = `${range.value * 50}px`;
+    recta.style.height = `${range.value * 50}px`;
+})
+  </script>
+</body>
+</html>
